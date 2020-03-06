@@ -1,4 +1,4 @@
-﻿[Termux](https://i.imgur.com/8IuYLRl.jpg)
+﻿![Termux](https://i.imgur.com/8IuYLRl.jpg)
 Download termux from [playstore](https://play.google.com/store/apps/details?id=com.termux) or [fdroid](https://f-droid.org/packages/com.termux/)
 
 - The termux app itself is same but the signature is different so you can't use the Play store version with termux styling from F-Droid.but if you download both termux and termux styling from F-Droid you can use both.Termux from F-Droid has free styling so I suggest to use it from F-Droid.
