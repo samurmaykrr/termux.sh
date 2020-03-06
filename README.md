@@ -13,11 +13,11 @@ Download termux from [playstore](https://play.google.com/store/apps/details?id=c
 # Options and menus
 A long press on the screen will display a selectable copy cursor, along with the Copy, Paste, More ... options.
 
-[Options screen](https://i.imgur.com/DNvRPLY.jpg)
+![Options screen](https://i.imgur.com/DNvRPLY.jpg)
 
 - Click More ... to go to the next menu level.
 
-[More options](https://i.imgur.com/cpCYVBd.jpg)
+![More options](https://i.imgur.com/cpCYVBd.jpg)
 
 ```
 Long press on screen
@@ -34,7 +34,7 @@ Long press on screen
 ```
 Swipe right from the left edge of the screen to drag out the navigation bar, where you can create, switch, rename sessions, and bring up input methods.
 
-[Left multipanel](https://i.imgur.com/0zfWmce.png)
+![Left multipanel](https://i.imgur.com/0zfWmce.png)
 
 # Common shortcut keys
  When using the terminal, you need to use the Alt, Ctrl, Esc and other keys, but these keys are not available on the phone.
@@ -78,9 +78,9 @@ Swipe right from the left edge of the screen to drag out the navigation bar, whe
 ```
 # Extended function buttons
  As mentioned earlier, Ter­mux can use the volume keys to implement shortcut keys. Personally, using volume keys is not very inconvenient.  Ter­mux also provides buttons for screen extensions.  You can use volume plus + Q or volume plus + K to show and hide.
-[controls less](https://i.imgur.com/bN5Uazd.jpg)
+![controls less](https://i.imgur.com/bN5Uazd.jpg)
 In addition, the function keys can be moved to the left to call up the text input box, which can more conveniently paste and modify the instructions to be entered more finely.
-[controls sampled up](https://i.imgur.com/0LYzWQR.jpg)
+![controls sampled up](https://i.imgur.com/0LYzWQR.jpg)
 
 # Package management
 In addition to supporting the apt command, Ter­mux also encapsulates the pkg command. The pkg command is backward compatible with the apt command. The official recommendation is to use the pkg command, because it will automatically update the apt list when installing or upgrading the package, which means that performing pkg upgrade is equivalent to performing apt update && apt upgrade, which simplifies the operation process.
@@ -204,7 +204,7 @@ View IP address:
  - After executing the ssh command, you can enter the password to connect, and then you can easily perform various operations on the computer.
 
 # A simple showcase of neofetch on localhost
-[neofetch](https://i.imgur.com/wueHxNv.png)
+![neofetch](https://i.imgur.com/wueHxNv.png)
 
 - Configure SSH key login
  If you need to expose Ter­mux's SSH port to the public network, it is recommended to configure key login for security.
@@ -242,12 +242,12 @@ The `termux-wake-lock` command prevents the process of the Ter­mux application 
 
 Here we used [AnLinux](https://github.com/EXALAB/AnLinux-App)
 Is an app that helps users install Linux distributions in Ter­mux.  It is a guide, its essence is to give you a line of installation instructions for you to execute according to the distribution of your choice.  It's very easy to follow the instructions in the app, so I won't go into details here.
-[app ss](https://i.imgur.com/D2Gw0GP.png)
+![app ss](https://i.imgur.com/D2Gw0GP.png)
 
 # Custom extended function buttons
 The default function buttons are too simple and do not have the left and right arrow keys, which is not convenient to use. Fortunately you can `~/.termux/termux.properties` customize the key configuration file.
 
-[upgraded panel](https://i.imgur.com/m25fnZC.jpg)
+![upgraded panel](https://i.imgur.com/m25fnZC.jpg)
 
 - If you want to set it up like this, you can add the following to the configuration file:
 ```
@@ -355,7 +355,7 @@ source ~/.zshrc
 ```
 # Modify terminal color
 To modify the color you need to install [Termux: Styling](https://wiki.termux.com/wiki/Termux:Styling)plugin, installed after a long press the screen to enter the More...menu, choose Styleyou can set the color and font. This was mentioned in the previous article when we introduced menus and options.
-[styling](https://i.imgur.com/x9VIB0z.png)
+![styling](https://i.imgur.com/x9VIB0z.png)
 - Choosing your favorite color and font, the set will `~/.termux` generate matching files in the directory `colors.properties` and font files font.ttf, these two files can be backed up, after only need to import, you no longer need to install the plugin.
 ```
 $ tree ~/.termux
@@ -366,7 +366,7 @@ $ tree ~/.termux
 └── termux.properties
 ```
 # Modify the greeting of the startup page
-[start screen](https://i.imgur.com/TIzjpN9.jpg)
+![start screen](https://i.imgur.com/TIzjpN9.jpg)
 - This information will be helpful when you first come into contact with Termux, but with a deeper understanding of Termux and the desire to control human instincts, you will definitely want to replace it. I find that most of my friends will use their IDs in large fonts. Way to present.
 
 ```
