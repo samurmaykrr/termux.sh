@@ -7,7 +7,7 @@ Download termux from [playstore](https://play.google.com/store/apps/details?id=c
 # The homescreen of termux
 ![Image of Termux homescreen](https://i.imgur.com/125iBJY.jpg)
 
--Basic operation
+- Basic operation
  As the saying goes, "Before you can run, you have to learn to walk", understand the basic operations first, and then do some sloppy operations easily.
 
 # Options and menus
@@ -15,7 +15,7 @@ A long press on the screen will display a selectable copy cursor, along with the
 
 [Options screen](https://i.imgur.com/DNvRPLY.jpg)
 
--Click More ... to go to the next menu level.
+- Click More ... to go to the next menu level.
 
 [More options](https://i.imgur.com/cpCYVBd.jpg)
 
@@ -76,7 +76,7 @@ Swipe right from the left edge of the screen to drag out the navigation bar, whe
  Volume + Q-> Show extra button view
  Volume + K-> Ibid
 ```
-##Extended function buttons
+# Extended function buttons
  As mentioned earlier, Ter­mux can use the volume keys to implement shortcut keys. Personally, using volume keys is not very inconvenient.  Ter­mux also provides buttons for screen extensions.  You can use volume plus + Q or volume plus + K to show and hide.
 [controls less](https://i.imgur.com/bN5Uazd.jpg)
 In addition, the function keys can be moved to the left to call up the text input box, which can more conveniently paste and modify the instructions to be entered more finely.
@@ -247,7 +247,7 @@ Is an app that helps users install Linux distributions in Ter­mux.  It is a gui
 # Custom extended function buttons
 The default function buttons are too simple and do not have the left and right arrow keys, which is not convenient to use. Fortunately you can `~/.termux/termux.properties` customize the key configuration file.
 
-[uograded panel](https://i.imgur.com/m25fnZC.jpg)
+[upgraded panel](https://i.imgur.com/m25fnZC.jpg)
 
 - If you want to set it up like this, you can add the following to the configuration file:
 ```
@@ -293,7 +293,7 @@ Install some basic common tools to facilitate subsequent tossing.
 ```
 pkg i -y git curl wget tree vim nano tmux htop
 ```
-##Install and configure Oh My Zsh
+# Install and configure Oh My Zsh
 - **Oh My Zsh will not make you a 10x developer ... but you may feel like one.**
 
 - The above sentence comes from [Oh My Zsh README](https://github.com/ohmyzsh/ohmyzsh/blob/master/README.md), which means "pretend to force is the first productivity". 
@@ -382,4 +382,4 @@ The first impression Termux gave me was that it was hard to use. I didn't even h
 
 
 
-#To be continued
+# To be continued
