@@ -36,7 +36,7 @@ Swipe right from the left edge of the screen to drag out the navigation bar, whe
 
 [Left multipanel](https://i.imgur.com/0zfWmce.png)
 
-##Common shortcut keys
+# Common shortcut keys
  When using the terminal, you need to use the Alt, Ctrl, Esc and other keys, but these keys are not available on the phone.
 
  In Ter­mux, you can use the volume down button to simulate the Ctrl key.  For example, volume + L is equivalent to pressing Ctrl + L on the keyboard.
@@ -82,10 +82,10 @@ Swipe right from the left edge of the screen to drag out the navigation bar, whe
 In addition, the function keys can be moved to the left to call up the text input box, which can more conveniently paste and modify the instructions to be entered more finely.
 [controls sampled up](https://i.imgur.com/0LYzWQR.jpg)
 
-##Package management
+# Package management
 In addition to supporting the apt command, Ter­mux also encapsulates the pkg command. The pkg command is backward compatible with the apt command. The official recommendation is to use the pkg command, because it will automatically update the apt list when installing or upgrading the package, which means that performing pkg upgrade is equivalent to performing apt update && apt upgrade, which simplifies the operation process.
 
-##few simple default commands
+# few simple default commands
 ```
 pkg search >> search a package
  pkg install >> installation of a package, shorthand pkg i
@@ -96,7 +96,7 @@ pkg search >> search a package
  pkg list-installed >> lists installed packages
  pkg files >> show the path to the relevant folder of a package
 ```
-##Differences between Termux and the standard Linux directory structure
+# Differences between Termux and the standard Linux directory structure
 Unlike most Linux distributions, Ter­mux does not follow file system hierarchy standards, and you cannot find directories such as / bin, / etc, / usr, / tmp and so on in standard paths.  For convenience, Termux provides a special environment variable: PREFIX, which is equivalent to the / usr directory.
 ```
 $ tree -d -L 1 $PREFIX
@@ -131,7 +131,7 @@ $ ls /usr
 bin  etc  include  lib  libexec  share  src  tmp  var
 ```
 **This can be useful for some programs that must use a standard path.**
-##root authority
+# root authority
  After all, the proot mentioned above is a simulation method, which will have certain limitations.  If the phone is already rooted, although you can switch to root by using su in Ter rootmux, some Ter 但是 mux commands will not work properly. After all, this is not a standard Linux environment.  The solution is to install tsu for root privileges, tsu is an alternative to su in Ter­mux.
 
 Install tsu:
@@ -148,7 +148,7 @@ Install tsu:
 ```
  Under the root user, enter the exit command or press Ctrl + D to return to the normal user.
 
-##Access external storage
+# Access external storage
  Ter­mux can only access its own internal data by default. If you want to access other data in the phone, after entering the following command, the phone will pop up a window for requesting permissions and allow it.
 ```
 termux-setup-storage
@@ -166,7 +166,7 @@ storage
 ```
 - You can also access the root directory of external storage through / sdcard.
 
-##SSH connection
+# SSH connection
 As a Linux terminal or server, SSH is required.  Whether you are SSHing to Ter­mux or using Ter­mux to connect to other hosts, you need to install openssh first.
 ```
 pkg i -y openssh
@@ -176,7 +176,7 @@ pkg i -y openssh
 ```
 ssh User@Host -p Port
 ```
-##SSH to Termux
+# SSH to Termux
 After all, the mobile phone is too restrictive to operate, and it is very elegant to operate through a SSH connection on the computer.
 
 - set password:
@@ -203,7 +203,7 @@ View IP address:
 ```
  - After executing the ssh command, you can enter the password to connect, and then you can easily perform various operations on the computer.
 
-#A simple showcase of neofetch on localhost
+# A simple showcase of neofetch on localhost
 [neofetch](https://i.imgur.com/wueHxNv.png)
 
 - Configure SSH key login
@@ -222,7 +222,7 @@ View IP address:
 ```
 echo "sshd" >> ~/.zshrc
 ```
-##Start the SSH server after the phone is powered on
+# Start the SSH server after the phone is powered on
  First install the Termux: Boot plug-in. After installation, give the plug-in permission to boot, so that Ter­mux can start automatically after booting.
 
 - Create ~ / .termux / boot / directory (the scripts placed in this directory will be executed after booting Termux).
@@ -236,7 +236,7 @@ echo 'termux-wake-lock; sshd' > ~/.termux/boot/start-sshd
 The `termux-wake-lock` command prevents the process of the Ter­mux application from freezing when the phone is sleeping.
  After the setting is completed, the phone will automatically start Ter­mux and start the SSH server.
 
-##Install a Linux distribution
+# Install a Linux distribution
 - After all, Ter­mux is not a complete Linux environment. If there is a deeper Linux environment requirement, you can install and run a Linux distribution in Ter­mux to simulate a complete Linux environment. You can even install a desktop environment.
 
 
@@ -244,7 +244,7 @@ Here we used [AnLinux](https://github.com/EXALAB/AnLinux-App)
 Is an app that helps users install Linux distributions in Ter­mux.  It is a guide, its essence is to give you a line of installation instructions for you to execute according to the distribution of your choice.  It's very easy to follow the instructions in the app, so I won't go into details here.
 [app ss](https://i.imgur.com/D2Gw0GP.png)
 
-##Custom extended function buttons
+# Custom extended function buttons
 The default function buttons are too simple and do not have the left and right arrow keys, which is not convenient to use. Fortunately you can `~/.termux/termux.properties` customize the key configuration file.
 
 [uograded panel](https://i.imgur.com/m25fnZC.jpg)
@@ -253,7 +253,7 @@ The default function buttons are too simple and do not have the left and right a
 ```
 extra-keys = [['ESC','/','-','HOME','UP','END','PGUP','DEL'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]
 ```
-##As a lazy person, I usually do it with one click:
+# As a lazy person, I usually do it with one click:
 ```
 mkdir -p ~/.termux && echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP','DEL'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]" > ~/.termux/termux.properties
 ```
@@ -261,7 +261,7 @@ mkdir -p ~/.termux && echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP
 ```
 termux-reload-settings
 ```
-#Replace domestic software source
+# Replace domestic software source
 By default, the software package download speed is very slow. You can speed up the software package download speed by replacing the domestic software source.
 
 To prevent modification errors, first back up the source list file:
@@ -275,20 +275,20 @@ sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/t
 ```
 You can also enter `apt edit-sources` manually edited source files. Replace the default official source with the mirror source of Tsinghua University https://mirrors.tuna.tsinghua.edu.cn/termux.
 
-##Check modification:
+# Check modification:
 ```
 $ cat $PREFIX/etc/apt/sources.list
 -The main termux repository:
 -deb https://dl.bintray.com/termux/termux-packages-24 stable main
 deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main
 ```
-##Last update:
+# Last update:
 ```
 pkg up
 ```
 If the card progresses, exit the process of Termux, reopen it, and run `dpkg --configure -a` to repair it.
 
-##Install common tools
+# Install common tools
 Install some basic common tools to facilitate subsequent tossing.
 ```
 pkg i -y git curl wget tree vim nano tmux htop
@@ -299,7 +299,7 @@ pkg i -y git curl wget tree vim nano tmux htop
 - The above sentence comes from [Oh My Zsh README](https://github.com/ohmyzsh/ohmyzsh/blob/master/README.md), which means "pretend to force is the first productivity". 
 - I don't use Oh My Zsh to pretend to make the terminal fancy. As a pragmatist, I really like the automatic suggestion, completion, and code highlighting functions, which greatly improves the input efficiency of the terminal. So regardless of platform, Oh My Zsh will be installed.
 
-##Install zsh
+# Install zsh
 ```
 pkg i -y zsh
 ```
@@ -316,7 +316,7 @@ Oh My Zsh will prompt you to set zsh as the default sehll after installation. If
 ```
 chsh -s zsh
 ```
-##Modify Oh My Zsh Theme
+# Modify Oh My Zsh Theme
 Oh My Zsh has a lot of [built-in themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes), just need to modify the configuration file to enable. You can also choose to install [external themes](https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes), such as [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
 - The theme I use is ys , it's simple and practical, not fancy. Use `sed` the command to modify a key:
@@ -327,7 +327,7 @@ After modification, enter the following command to refresh the configuration and
 ```
 source ~/.zshrc
 ```
-##Install the Oh My Zsh plugin
+# Install the Oh My Zsh plugin
 - Install zsh-syntax-highlighting (code highlighting)
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
@@ -353,7 +353,7 @@ Last applied configuration
 ```
 source ~/.zshrc
 ```
-##Modify terminal color
+# Modify terminal color
 To modify the color you need to install [Termux: Styling](https://wiki.termux.com/wiki/Termux:Styling)plugin, installed after a long press the screen to enter the More...menu, choose Styleyou can set the color and font. This was mentioned in the previous article when we introduced menus and options.
 [styling](https://i.imgur.com/x9VIB0z.png)
 - Choosing your favorite color and font, the set will `~/.termux` generate matching files in the directory `colors.properties` and font files font.ttf, these two files can be backed up, after only need to import, you no longer need to install the plugin.
@@ -365,7 +365,7 @@ $ tree ~/.termux
 ├── shell -> /data/data/com.termux/files/usr/bin/zsh
 └── termux.properties
 ```
-##Modify the greeting of the startup page
+# Modify the greeting of the startup page
 [start screen](https://i.imgur.com/TIzjpN9.jpg)
 - This information will be helpful when you first come into contact with Termux, but with a deeper understanding of Termux and the desire to control human instincts, you will definitely want to replace it. I find that most of my friends will use their IDs in large fonts. Way to present.
 
@@ -376,7 +376,7 @@ And for someone like me who advocates minimalism, choose to keep it from showing
 ```
 touch ~/.hushlogin
 ```
-##tail
+# tail
 The first impression Termux gave me was that it was hard to use. I didn't even have the left and right arrow keys, and I almost uninstalled. Because recent studies router, so they try to enter Termux `pkg install iperf3`to install iPerf3, I did not expect installed, and then hold the phone over the house measured WiFi throughput. This also made me interested in it, and then I started to understand it slowly. It was out of hand and prompted me to try to customize it.
 
 
