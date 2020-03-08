@@ -379,7 +379,9 @@ touch ~/.hushlogin
 # tail
 The first impression Termux gave me was that it was hard to use. I didn't even have the left and right arrow keys, and I almost uninstalled. Because recent studies router, so they try to enter Termux `pkg install iperf3`to install iPerf3, I did not expect installed, and then hold the phone over the house measured WiFi throughput. This also made me interested in it, and then I started to understand it slowly. It was out of hand and prompted me to try to customize it.
 
-
+# How to run Linux in android using termux
+- okay so termux can run many linux codes but not all...so for this we can run the bash scripts given below you can follow these or download this [app](https://play.google.com/store/apps/details?id=studio.com.techriz.andronix)
+then choose the selected or wanted distro to use...you can select quite a few distros so enjoy..
 
 
 # To be continued
