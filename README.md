@@ -382,6 +382,6 @@ The first impression Termux gave me was that it was hard to use. I didn't even h
 # How to run Linux in android using termux
 - okay so termux can run many linux codes but not all...so for this we can run the bash scripts given below you can follow these or download this [app](https://play.google.com/store/apps/details?id=studio.com.techriz.andronix) here is the [github page](https://github.com/AndronixApp/AndronixOrigin)
 then choose the selected or wanted distro to use...you can select quite a few distros so enjoy..
-
+**I have already given another app for linux distros but this one is much more stable and upto date** *you can use either tho*
 
 # To be continued
