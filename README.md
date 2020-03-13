@@ -4,13 +4,13 @@ Download termux from [playstore](https://play.google.com/store/apps/details?id=c
 - The termux app itself is same but the signature is different so you can't use the Play store version with termux styling from F-Droid.but if you download both termux and termux styling from F-Droid you can use both.Termux from F-Droid has free styling so I suggest to use it from F-Droid.
 
 
-# The homescreen of termux
+## The homescreen of termux
 ![Image of Termux homescreen](https://i.imgur.com/125iBJY.jpg)
 
 - Basic operation
  As the saying goes, "Before you can run, you have to learn to walk", understand the basic operations first, and then do some sloppy operations easily.
 
-# Options and menus
+## Options and menus
 A long press on the screen will display a selectable copy cursor, along with the Copy, Paste, More ... options.
 
 ![Options screen](https://i.imgur.com/DNvRPLY.jpg)
