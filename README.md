@@ -317,7 +317,7 @@ Oh My Zsh will prompt you to set zsh as the default sehll after installation. If
 chsh -s zsh
 ```
 # Modify Oh My Zsh Theme
-Oh My Zsh has a lot of [built-in themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes), just need to modify the configuration file to enable. You can also choose to install [external themes](https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes), such as [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+Oh My Zsh has a lot of [built-in themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes), just need to modify the configuration file to enable. You can also choose to install [external themes](https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes), such as [Powerlevel10k](https://github.com/romkatv/powerlevel10k) and [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 - The theme I use is ys , it's simple and practical, not fancy. Use `sed` the command to modify a key:
 ```
