@@ -49,7 +49,7 @@ termux-reload-settings
 #echo "Please exit and restart termux for better performance"
 sleep 3
 clear
-#rm -rf termux-sudo termux.sh
+rm -rf termux-sudo termux.sh
 clear
 figlet "Now shall we customize our shell  ͡°ᴥ ͡° ..."
 pkg i -y zsh
