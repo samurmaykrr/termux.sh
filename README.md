@@ -11,7 +11,13 @@ And enjoy
 
 # Everything in this small docs
   * [Homescreen](https://github.com/Towha/Termux/blob/master/README.md#the-homescreen-of-termux)
-
+  * [Common shortcut keys](https://github.com/Towha/Termux#common-shortcut-keys)
+  * [Extended function buttons](https://github.com/Towha/Termux#extended-function-buttons)
+  * [Access external storage](https://github.com/Towha/Termux#access-external-storage)
+  * [SSH connection](https://github.com/Towha/Termux#ssh-connection)
+  * [Custom extended function buttons](https://github.com/Towha/Termux#custom-extended-function-buttons)
+  * [Themes](https://github.com/Towha/Termux#install-and-configure-oh-my-zsh)
+  * [Custom startup page](https://github.com/Towha/Termux#modify-the-greeting-of-the-startup-page)
 ## The homescreen of termux
 ![Image of Termux homescreen](https://i.imgur.com/125iBJY.jpg)
 
