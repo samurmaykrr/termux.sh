@@ -71,10 +71,11 @@ echo -e "${INFO} Making Oh My Zsh nicer..."
         sed -i '/^themes=/c\themes=(git sudo z powerlevel10k)' $HOME/.zshrc
     if
         sed -i '/^plugins=/c\plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-completions )' $HOME/.zshrc
-    fi
+    if
     [ $(uname -o) != Android ] && chsh -s $(which zsh) || chsh -s zsh
     [ $? == 0 ] && echo -e "${INFO} Oh My Zsh is nice now!!！"
     zsh
+    fi
 
 
 sleep 3
