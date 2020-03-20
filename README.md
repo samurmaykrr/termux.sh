@@ -10,7 +10,7 @@ bash <(curl -fsSL https://git.io/JvMD6)
 And enjoy 
 
 # Everything in this small docs
-  * [Homescreen](## The homescreen of termux)
+  * [Homescreen](https://github.com/Towha/Termux/blob/master/README.md#the-homescreen-of-termux)
 
 ## The homescreen of termux
 ![Image of Termux homescreen](https://i.imgur.com/125iBJY.jpg)
