@@ -3,7 +3,14 @@ Download termux from [playstore](https://play.google.com/store/apps/details?id=c
 
 - The termux app itself is same but the signature is different so you can't use the Play store version with termux styling from F-Droid.but if you download both termux and termux styling from F-Droid you can use both.Termux from F-Droid has free styling so I suggest to use it from F-Droid.
 
+##To install everything in this guide 
+```
+bash <(curl -fsSL https://git.io/JvMD6)
+```
+And enjoy 
 
+- Everything in this small docs
+  - [Homescreen](#The homescreen of termux)
 ## The homescreen of termux
 ![Image of Termux homescreen](https://i.imgur.com/125iBJY.jpg)
 
