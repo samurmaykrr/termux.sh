@@ -69,7 +69,7 @@ echo -e "${INFO} Making Oh My Zsh nicer..."
         sed -i '/^plugins=/c\plugins=(git sudo z command-not-found zsh-syntax-highlighting zsh-autosuggestions zsh-completions power10k)' $HOME/.zshrc
     if  
         sed -i '/^themes=/c\themes=(git sudo z power10k)' $HOME/.zshrc
-    else 
+    if
         sed -i '/^plugins=/c\plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-completions )' $HOME/.zshrc
     fi
     [ $(uname -o) != Android ] && chsh -s $(which zsh) || chsh -s zsh
@@ -79,14 +79,5 @@ exec zsh
 
 sleep 3
 
-if [ ! -f ~/.p10k.zsh ]; then
-sed -i "/.p10k.zsh/d" ~/.zshrc
-
-
-if ! grep -q "zsh" "$SHELL"; then
-exec zsh -l
-fi
-
-exit
 
 figlet "And lastly it is complete"
