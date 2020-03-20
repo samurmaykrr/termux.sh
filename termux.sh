@@ -62,15 +62,26 @@ sed_handle_alias_zshrc "style" "'p10k configure'"
 sed_handle_alias_zshrc "update" "'~/.oh-my-zsh/custom/misc/upgrade.zsh'"
 sed_handle_alias_zshrc "uninstall" "'~/.oh-my-zsh/custom/misc/uninstall.sh'"
 
+# Installing "Syntax Highlighting" addon for ZSH, and appending that to the plugins list.
+echo "Installing 'Syntax Highlighting' addon for Oh-My-ZSH..."
 git_handle_plugin_repo https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 sed_handle_plugin_zshrc "zsh-syntax-highlighting"
 
+# Installing "Auto Suggestions" addon for ZSH, and appending that to the plugins list.
+echo "Installing 'Auto Suggestions' addon for Oh-My-ZSH..."
 git_handle_plugin_repo https://github.com/zsh-users/zsh-autosuggestions.git "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 sed_handle_plugin_zshrc "zsh-autosuggestions"
 
+# Installing "Custom Plugins Updater" addon for ZSH, and appending that to the plugins list.
+echo "Installing 'Custom Plugins Updater' addon for Oh-My-ZSH..."
 git_handle_plugin_repo https://github.com/TamCore/autoupdate-oh-my-zsh-plugins "$HOME/.oh-my-zsh/custom/plugins/autoupdate"
 sed_handle_plugin_zshrc "autoupdate"
 
+# Cloning the LITMUX repo, to be handled by the updater.
+git_handle_plugin_repo https://github.com/AvinashReddy3108/LitMux.git "$HOME/.oh-my-zsh/custom/misc/LitMux"
+
+# Installing powerlevel10k theme for ZSH, and making it the current theme in .zshrc file.
+echo "Installing 'Powerlevel10K' theme for ZSH..."
 git_handle_plugin_repo https://github.com/romkatv/powerlevel10k.git "$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
 sed -i 's~\(ZSH_THEME="\)[^"]*\(".*\)~\1powerlevel10k/powerlevel10k\2~' ~/.zshrc
 
