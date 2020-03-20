@@ -58,24 +58,20 @@ pkg i -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" > /dev/null
 chsh -s zsh
 echo -e "${INFO} Making Oh My Zsh nicer..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
     git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
     [[ -z $(grep "autoload -U compinit && compinit" $HOME/.zshrc) ]] && echo "autoload -U compinit && compinit" >> $HOME/.zshrc
-    sed -i '/^ZSH_THEME=/c\ZSH_THEME="ys"' $HOME/.zshrc
+    sed -i '/^ZSH_THEME=/c\ZSH_THEME="powerlevel10k/powerlevel10k"' $HOME/.zshrc
     if [ $(uname -o) != Android ]; then
-        sed -i '/^plugins=/c\plugins=(git sudo z command-not-found zsh-syntax-highlighting zsh-autosuggestions zsh-completions power10k)' $HOME/.zshrc
-    if  
-        sed -i '/^themes=/c\themes=(git sudo z powerlevel10k)' $HOME/.zshrc
-    if
-        sed -i '/^plugins=/c\plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-completions )' $HOME/.zshrc
-    if
+        sed -i '/^plugins=/c\plugins=(git sudo z command-not-found zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
+    else
+        sed -i '/^plugins=/c\plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
+    fi
     [ $(uname -o) != Android ] && chsh -s $(which zsh) || chsh -s zsh
-    [ $? == 0 ] && echo -e "${INFO} Oh My Zsh is nice now!!！"
+    [ $? == 0 ] && echo -e "${INFO} Oh My Zsh is nicer now！"
     zsh
-    
 
 
 sleep 3
