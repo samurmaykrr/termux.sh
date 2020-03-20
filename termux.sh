@@ -1,35 +1,5 @@
 #!//data/com.termux/files/usr/bin/bash
 current_dir=$(pwd)
-
-git_handle_plugin_repo () {
-   if [ -d "$2" ]; then
-   cd "$2"
-   git reset --hard
-   git pull
-   cd $current_dir
-   else
-   git clone --depth 1 "$1" "$2"
-   fi
-}
-
-sed_handle_plugin_zshrc () {
-   if grep "plugins=" ~/.zshrc | sed -n 2p | grep "$1" ; then
-   echo "The ZSH plugin '$1' is already installed in the .zshrc file."
-   else
-   sed -i "s/\(^plugins=([^)]*\)/\1 $1/" ~/.zshrc
-   fi
-}
-
-sed_handle_alias_zshrc () {
-   if grep "^alias $1=*" ~/.zshrc ; then
-   true
-   else
-   sed -i "/^alias $1=*/d" ~/.zshrc
-   echo "alias $1=$2" >> ~/.zshrc
-   fi
-}
-
-
 apt update && apt upgrade -y
 clear
 echo 'Welcome and enjoy the script as it runs'
@@ -87,35 +57,21 @@ pkg i -y zsh
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" > /dev/null
 chsh -s zsh
-
-sed_handle_alias_zshrc "color" "'~/.oh-my-zsh/custom/misc/.termux/colors.sh'"
-sed_handle_alias_zshrc "style" "'p10k configure'"
-sed_handle_alias_zshrc "update" "'~/.oh-my-zsh/custom/misc/upgrade.zsh'"
-sed_handle_alias_zshrc "uninstall" "'~/.oh-my-zsh/custom/misc/uninstall.sh'"
-
-# Installing "Syntax Highlighting" addon for ZSH, and appending that to the plugins list.
-echo "Installing 'Syntax Highlighting' addon for Oh-My-ZSH..."
-git_handle_plugin_repo https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-sed_handle_plugin_zshrc "zsh-syntax-highlighting"
-
-# Installing "Auto Suggestions" addon for ZSH, and appending that to the plugins list.
-echo "Installing 'Auto Suggestions' addon for Oh-My-ZSH..."
-git_handle_plugin_repo https://github.com/zsh-users/zsh-autosuggestions.git "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-sed_handle_plugin_zshrc "zsh-autosuggestions"
-
-# Installing "Custom Plugins Updater" addon for ZSH, and appending that to the plugins list.
-echo "Installing 'Custom Plugins Updater' addon for Oh-My-ZSH..."
-git_handle_plugin_repo https://github.com/TamCore/autoupdate-oh-my-zsh-plugins "$HOME/.oh-my-zsh/custom/plugins/autoupdate"
-sed_handle_plugin_zshrc "autoupdate"
-
-# Cloning the LITMUX repo, to be handled by the updater.
-git_handle_plugin_repo https://github.com/AvinashReddy3108/LitMux.git "$HOME/.oh-my-zsh/custom/misc/LitMux"
-
-# Installing powerlevel10k theme for ZSH, and making it the current theme in .zshrc file.
-echo "Installing 'Powerlevel10K' theme for ZSH..."
-git_handle_plugin_repo https://github.com/romkatv/powerlevel10k.git "$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
-sed -i 's~\(ZSH_THEME="\)[^"]*\(".*\)~\1powerlevel10k/powerlevel10k\2~' ~/.zshrc
-
+echo -e "${INFO} 开始安装 Oh My Zsh ..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions
+    [[ -z $(grep "autoload -U compinit && compinit" $HOME/.zshrc) ]] && echo "autoload -U compinit && compinit" >> $HOME/.zshrc
+    sed -i '/^ZSH_THEME=/c\ZSH_THEME="ys"' $HOME/.zshrc
+    if [ $(uname -o) != Android ]; then
+        sed -i '/^plugins=/c\plugins=(git sudo z command-not-found zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
+    else
+        sed -i '/^plugins=/c\plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
+    fi
+    [ $(uname -o) != Android ] && chsh -s $(which zsh) || chsh -s zsh
+    [ $? == 0 ] && echo -e "${INFO} Oh My Zsh 安装成功！"
+    zsh
 sleep 3
 
 if [ ! -f ~/.p10k.zsh ]; then
