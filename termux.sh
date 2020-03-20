@@ -1,5 +1,6 @@
 #!//data/com.termux/files/usr/bin/bash
 current_dir=$(pwd)
+touch ~/.hushlogin
 apt update && apt upgrade -y
 clear
 echo 'Welcome and enjoy the script as it runs'
