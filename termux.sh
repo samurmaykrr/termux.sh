@@ -67,8 +67,10 @@ echo -e "${INFO} Making Oh My Zsh nicer..."
     sed -i '/^ZSH_THEME=/c\ZSH_THEME="ys"' $HOME/.zshrc
     if [ $(uname -o) != Android ]; then
         sed -i '/^plugins=/c\plugins=(git sudo z command-not-found zsh-syntax-highlighting zsh-autosuggestions zsh-completions power10k)' $HOME/.zshrc
-    else
-        sed -i '/^plugins=/c\plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-completions power10k)' $HOME/.zshrc
+    if  
+        sed -i '/^themes=/c\themes=(git sudo z power10k)' $HOME/.zshrc
+    else 
+        sed -i '/^plugins=/c\plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-completions )' $HOME/.zshrc
     fi
     [ $(uname -o) != Android ] && chsh -s $(which zsh) || chsh -s zsh
     [ $? == 0 ] && echo -e "${INFO} Oh My Zsh is nice now!!！"
