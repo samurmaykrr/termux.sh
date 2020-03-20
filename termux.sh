@@ -53,8 +53,9 @@ rm -rf termux-sudo termux.sh
 clear
 figlet "Now shall we customize our shell  ͡°ᴥ ͡° ..."
 pkg i -y zsh
-chsh -s zsh
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" > /dev/null
+chsh -s zsh
 
 git_handle_plugin_repo https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 sed_handle_plugin_zshrc "zsh-syntax-highlighting"
