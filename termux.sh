@@ -57,6 +57,11 @@ pkg i -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" > /dev/null
 chsh -s zsh
 
+sed_handle_alias_zshrc "color" "'~/.oh-my-zsh/custom/misc/.termux/colors.sh'"
+sed_handle_alias_zshrc "style" "'p10k configure'"
+sed_handle_alias_zshrc "update" "'~/.oh-my-zsh/custom/misc/upgrade.zsh'"
+sed_handle_alias_zshrc "uninstall" "'~/.oh-my-zsh/custom/misc/uninstall.sh'"
+
 git_handle_plugin_repo https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 sed_handle_plugin_zshrc "zsh-syntax-highlighting"
 
