@@ -75,7 +75,7 @@ echo -e "${INFO} Making Oh My Zsh nicer..."
     [ $(uname -o) != Android ] && chsh -s $(which zsh) || chsh -s zsh
     [ $? == 0 ] && echo -e "${INFO} Oh My Zsh is nice now!!！"
     zsh
-    fi
+    
 
 
 sleep 3
