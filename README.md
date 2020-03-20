@@ -7,7 +7,6 @@ Download termux from [playstore](https://play.google.com/store/apps/details?id=c
 ```
 bash <(curl -fsSL https://git.io/JvMD6)
 ```
-And enjoy 
 
 # Everything in this small docs
   * [Homescreen](https://github.com/Towha/Termux/blob/master/README.md#the-homescreen-of-termux)
