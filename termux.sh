@@ -1,4 +1,5 @@
 #!//data/com.termux/files/usr/bin/bash
+current_dir=$(pwd)
 
 git_handle_plugin_repo () {
    if [ -d "$2" ]; then
