@@ -85,6 +85,33 @@ echo "Installing 'Powerlevel10K' theme for ZSH..."
 git_handle_plugin_repo https://github.com/romkatv/powerlevel10k.git "$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
 sed -i 's~\(ZSH_THEME="\)[^"]*\(".*\)~\1powerlevel10k/powerlevel10k\2~' ~/.zshrc
 
+git_handle_plugin_repo () {
+   if [ -d "$2" ]; then
+   cd "$2"
+   git reset --hard
+   git pull
+   cd $current_dir
+   else
+   git clone --depth 1 "$1" "$2"
+   fi
+}
+
+sed_handle_plugin_zshrc () {
+   if grep "plugins=" ~/.zshrc | sed -n 2p | grep "$1" ; then
+   echo "The ZSH plugin '$1' is already installed in the .zshrc file."
+   else
+   sed -i "s/\(^plugins=([^)]*\)/\1 $1/" ~/.zshrc
+   fi
+}
+
+sed_handle_alias_zshrc () {
+   if grep "^alias $1=*" ~/.zshrc ; then
+   true
+   else
+   sed -i "/^alias $1=*/d" ~/.zshrc
+   echo "alias $1=$2" >> ~/.zshrc
+   fi
+}
 sleep 3
 
 if [ ! -f ~/.p10k.zsh ]; then
