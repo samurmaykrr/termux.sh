@@ -14,6 +14,9 @@ echo -e "Requesting access to storage"
 termux-setup-storage
 echo
 echo
+pkg install unstable-repo
+pkg install x11-repo
+pkg install root-repo
 clear 
 apt install nmap -y
 apt install nano -y
