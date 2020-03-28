@@ -17,6 +17,7 @@ bash <(curl -fsSL https://git.io/JvMD6)
   * [Custom extended function buttons](https://github.com/Towha/Termux#custom-extended-function-buttons)
   * [Themes](https://github.com/Towha/Termux#install-and-configure-oh-my-zsh)
   * [Custom startup page](https://github.com/Towha/Termux#modify-the-greeting-of-the-startup-page)
+  * [A Simple wiki](https://github.com/Towha/Termux/wiki)
 ## The homescreen of termux
 ![Image of Termux homescreen](https://i.imgur.com/125iBJY.jpg)
 
