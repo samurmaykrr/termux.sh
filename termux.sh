@@ -33,6 +33,7 @@ apt install tmux -y
 apt install tree -y
 apt install htop -y
 apt install vim -y
+apt install neofetch -y
 echo
 clear
 git clone https://github.com/Towha/termux-sudo 
@@ -56,12 +57,12 @@ sleep 3
 clear
 rm -rf termux-sudo termux.sh
 clear
-figlet "Now shall we customize our shell  ͡°ᴥ ͡° ..."
+figlet "Now shall we customize our shell...."
 pkg i -y zsh
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" > /dev/null
 chsh -s zsh
-echo -e "${INFO} Making Oh My Zsh nicer..."
+echo -e "${INFO} Making Oh My Zsh BETTER..."
     git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions
@@ -74,7 +75,7 @@ echo -e "${INFO} Making Oh My Zsh nicer..."
         sed -i '/^plugins=/c\plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
     fi
     [ $(uname -o) != Android ] && chsh -s $(which zsh) || chsh -s zsh
-    [ $? == 0 ] && echo -e "${INFO} Oh My Zsh is nicer now！"
+    [ $? == 0 ] && echo -e "${INFO} Oh My Zsh is better now！"
     zsh
 
 
@@ -82,3 +83,6 @@ sleep 3
 
 
 figlet "And lastly it is complete"
+sleep 5
+clear
+neofetch
