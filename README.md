@@ -390,6 +390,29 @@ And for someone like me who advocates minimalism, choose to keep it from showing
 ```
 touch ~/.hushlogin
 ```
+# How to run scripts every hour with the help of cron or Termux tasker
+**Tasker method**
+So the termux docs explains the use of termux tasker to run your scripts but it's isn't very beginner friendly..
+In the docs it states to put your files in `~/.termux/tasker` but many may or may not know how to do that.. now you can do this in two way it's via the move or copy commmand (you can read the wiki if you wanna learn the commands)..
+with that said i am going to use the cp method so let's assume `Bash.sh` is in our internal root directory of the phone so we do `/sdcard/`(if you meet with errors then do with `cd` then we want to copy this script to that path so we gotta use this command
+```
+cp bash.sh ~/.termux/tasker
+```
+- If you don't see this directory then you need to install tasker and if you still don't see it then `mkdir ~/.termux/tasker`. After that you can open tasker and select the plugin option then select this script....**(also you will need to have termux:tasker installed)**..
+
+**cron tab method**
+So crontab won't run in the background if you close termux...this is unless you disable battery optimization and allow wakelock..Now if you enable wakelock the crontab service should work fine..Termux requires you to have wakelock or else cron service won't work either..
+you can try these commands for improvements in-case you meet with errors
+```
+pkg install termux-services
+
+sv-enable crond
+
+termux-wake-lock
+```
+with this crond should run absolutely fine but if it still doesn't then disable any power save restrictions on termux..
+
+- All said i personally recommend Tasker over cron on Android.
 # tail
 The first impression Termux gave me was that it was hard to use. I didn't even have the left and right arrow keys, and I almost uninstalled. Because recent studies router, so they try to enter Termux `pkg install iperf3`to install iPerf3, I did not expect installed, and then hold the phone over the house measured WiFi throughput. This also made me interested in it, and then I started to understand it slowly. It was out of hand and prompted me to try to customize it.
 
