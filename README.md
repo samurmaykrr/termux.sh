@@ -17,6 +17,7 @@ bash <(curl -fsSL https://git.io/JvMD6)
   * [Custom extended function buttons](https://github.com/Towha/Termux#custom-extended-function-buttons)
   * [Themes](https://github.com/Towha/Termux#install-and-configure-oh-my-zsh)
   * [Custom startup page](https://github.com/Towha/Termux#modify-the-greeting-of-the-startup-page)
+  * [Cron and tasker information](https://github.com/Towha/Termux#how-to-run-scripts-every-hour-with-the-help-of-cron-or-termux-tasker)
   * [A Simple wiki](https://github.com/Towha/Termux/wiki)
 ## The homescreen of termux
 ![Image of Termux homescreen](https://i.imgur.com/125iBJY.jpg)
@@ -413,12 +414,13 @@ termux-wake-lock
 with this crond should run absolutely fine but if it still doesn't then disable any power save restrictions on termux..
 
 - All said i personally recommend Tasker over cron on Android.
-# tail
-The first impression Termux gave me was that it was hard to use. I didn't even have the left and right arrow keys, and I almost uninstalled. Because recent studies router, so they try to enter Termux `pkg install iperf3`to install iPerf3, I did not expect installed, and then hold the phone over the house measured WiFi throughput. This also made me interested in it, and then I started to understand it slowly. It was out of hand and prompted me to try to customize it.
 
 # How to run Linux in android using termux
 - okay so termux can run many linux codes but not all...so for this we can run the bash scripts given below you can follow these or download this [app](https://play.google.com/store/apps/details?id=studio.com.techriz.andronix) here is the [github page](https://github.com/AndronixApp/AndronixOrigin)
 then choose the selected or wanted distro to use...you can select quite a few distros so enjoy..
 **I have already given another app for linux distros but this one is much more stable and upto date** *you can use either tho*
+
+# tail
+The first impression Termux gave me was that it was hard to use. I didn't even have the left and right arrow keys, and I almost uninstalled. Because recent studies router, so they try to enter Termux `pkg install iperf3`to install iPerf3, I did not expect installed, and then hold the phone over the house measured WiFi throughput. This also made me interested in it, and then I started to understand it slowly. It was out of hand and prompted me to try to customize it.
 
 # To be continued
