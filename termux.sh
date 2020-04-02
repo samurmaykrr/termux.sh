@@ -34,6 +34,7 @@ apt install tree -y
 apt install htop -y
 apt install vim -y
 apt install neofetch -y
+pkg install termux-services
 echo
 clear
 git clone https://github.com/Towha/termux-sudo 
