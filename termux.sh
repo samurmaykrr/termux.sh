@@ -1,16 +1,20 @@
 #!//data/com.termux/files/usr/bin/bash
 current_dir=$(pwd)
+red=`tput setaf 1`
+blue=`tput setaf 4`
+reset=`tput sgr0`
 touch ~/.hushlogin
 apt update && apt upgrade -y
 clear
-echo 'Welcome and enjoy the script as it runs'
-echo
-apt install figlet -y
+echo '${blue}Welcome and enjoy the script as it runs${reset}'
+echo '${red}in case the script fails and you don't see the ZSH shell then restart the script${reset}"
+sleep 5
 clear
+apt install figlet -y
 figlet TERMUX redefined
 echo 'By T O W H A'
 sleep 5
-echo -e "Requesting access to storage"
+echo -e "${blue}Requesting access to storage${reset}"
 termux-setup-storage
 echo
 echo
@@ -53,7 +57,7 @@ sleep 2
 echo 'Creating extra buttons'
 mkdir -p ~/.termux && echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP','DEL'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]" > ~/.termux/termux.properties
 termux-reload-settings
-#echo "Please exit and restart termux for better performance"
+#echo "${red}Please exit and restart termux for better performance after script is done${reset}"
 sleep 3
 clear
 rm -rf termux-sudo termux.sh
