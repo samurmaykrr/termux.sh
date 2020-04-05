@@ -6,8 +6,8 @@ reset=`tput sgr0`
 touch ~/.hushlogin
 apt update && apt upgrade -y
 clear
-echo '${blue}Welcome and enjoy the script as it runs${reset}'
-echo '${red}in case the script fails and you don't see the ZSH shell then restart the script${reset}"
+echo "${blue}Welcome and enjoy the script as it runs${reset}"
+echo "${red}in case the script fails and you don't see the ZSH shell then restart the script${reset}"
 sleep 5
 clear
 apt install figlet -y
