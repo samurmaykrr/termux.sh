@@ -1,5 +1,6 @@
 #!//data/com.termux/files/usr/bin/bash
 current_dir=$(pwd)
+#vars
 red=`tput setaf 1`
 blue=`tput setaf 4`
 reset=`tput sgr0`
@@ -7,14 +8,16 @@ touch ~/.hushlogin
 apt update && apt upgrade -y
 clear
 echo "${blue}Welcome and enjoy the script as it runs${reset}"
-echo "${red}in case the script fails and you don't see the ZSH shell then restart the script${reset}"
+echo "${red}in case the script fails and you are not seeing the ZSH shell then restart the script${reset}"
 sleep 5
 clear
 apt install figlet -y
-figlet TERMUX redefined
-echo 'By T O W H A'
+gem install lolcat
+clear 
+figlet -c TERMUX redefined | lolcat -a -d 5
+echo "${red}                       By T O W H A ${reset}"
 sleep 5
-echo -e "${blue}Requesting access to storage${reset}"
+echo "${blue} Requesting access to storage ${reset}"
 termux-setup-storage
 echo
 echo
@@ -36,6 +39,7 @@ apt install tsu -y
 apt install tmux -y
 apt install tree -y
 apt install htop -y
+apt install lolcat -y
 apt install vim -y
 apt install neofetch -y
 pkg install termux-services
@@ -47,14 +51,14 @@ pkg install ncurses-utils
 cat sudo > /data/data/com.termux/files/usr/bin/sudo
 chmod 700 /data/data/com.termux/files/usr/bin/sudo
 cd
-echo
+echo "${blue}Good we have progressed but to use sudo you actually require ROOT ${reset}"
+sleep 3
 clear
 #!//data/com.termux/files/usr/bin/bash
-echo
 apt update
 clear
 sleep 2
-echo 'Creating extra buttons'
+echo "${blue}Creating extra buttons ${reset}"
 mkdir -p ~/.termux && echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP','DEL'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]" > ~/.termux/termux.properties
 termux-reload-settings
 #echo "${red}Please exit and restart termux for better performance after script is done${reset}"
@@ -62,7 +66,7 @@ sleep 3
 clear
 rm -rf termux-sudo termux.sh
 clear
-figlet "Now shall we customize our shell...."
+figlet -c Now shall we customize our shell.. | lolcat -a -d 3
 pkg i -y zsh
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" > /dev/null
@@ -82,12 +86,10 @@ echo -e "${INFO} Making Oh My Zsh BETTER..."
     [ $(uname -o) != Android ] && chsh -s $(which zsh) || chsh -s zsh
     [ $? == 0 ] && echo -e "${INFO} Oh My Zsh is better now！"
     zsh
-
+exit
 
 sleep 3
-
-
-figlet "And lastly it is complete"
+clear
+figlet And lastly it is complete 
 sleep 5
 clear
-neofetch
