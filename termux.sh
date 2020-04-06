@@ -1,7 +1,7 @@
 #!//data/com.termux/files/usr/bin/bash
 current_dir=$(pwd)
 #vars
-red=`tput setaf 1`
+white=`tput setaf 7`
 blue=`tput setaf 4`
 reset=`tput sgr0`
 touch ~/.hushlogin
@@ -14,8 +14,8 @@ clear
 apt install figlet -y
 gem install lolcat
 clear 
-figlet -c TERMUX redefined | lolcat -a -d 5
-echo "${red}                       By T O W H A ${reset}"
+figlet -c TERMUX redefined | lolcat -p 100 -a
+echo "${white}                       By T O W H A ${reset}"
 sleep 5
 echo "${blue} Requesting access to storage ${reset}"
 termux-setup-storage
@@ -66,7 +66,7 @@ sleep 3
 clear
 rm -rf termux-sudo termux.sh
 clear
-figlet -c Now shall we customize our shell.. | lolcat -a -d 3
+figlet -c Now shall we customize our shell.. | lolcat -p 100 -a
 pkg i -y zsh
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" > /dev/null
