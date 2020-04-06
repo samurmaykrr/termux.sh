@@ -1,21 +1,21 @@
 #!//data/com.termux/files/usr/bin/bash
 current_dir=$(pwd)
 #vars
-white=`tput setaf 7`
+black=`tput setaf p`
 blue=`tput setaf 4`
 reset=`tput sgr0`
 touch ~/.hushlogin
 apt update && apt upgrade -y
 clear
 echo "${blue}Welcome and enjoy the script as it runs${reset}"
-echo "${red}in case the script fails and you are not seeing the ZSH shell then restart the script${reset}"
+echo "in case the script fails and you are not seeing the ZSH shell then restart the script"
 sleep 5
 clear
 apt install figlet -y
 gem install lolcat
 clear 
 figlet -c TERMUX redefined | lolcat -p 100 -a
-echo "${white}                       By T O W H A ${reset}"
+echo "${black}                  By T O W H A ${return}"
 sleep 5
 echo "${blue} Requesting access to storage ${reset}"
 termux-setup-storage
