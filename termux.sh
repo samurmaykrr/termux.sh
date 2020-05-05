@@ -42,7 +42,8 @@ apt install htop -y
 apt install lolcat -y
 apt install vim -y
 apt install neofetch -y
-pkg install termux-services
+pkg install termux-services -y
+pkg install make -y
 echo
 clear
 git clone https://github.com/Towha/termux-sudo 
