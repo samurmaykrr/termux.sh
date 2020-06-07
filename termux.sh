@@ -14,8 +14,8 @@ clear
 apt install figlet -y
 gem install lolcat
 clear 
-figlet -c TERMUX redefined | lolcat -p 100 -a
-echo "${black}                  By T O W H A ${return}"
+figlet -c TERMUX...
+echo "${black}                  Upgraded ${return}"
 sleep 5
 echo "${blue} Requesting access to storage ${reset}"
 termux-setup-storage
@@ -44,6 +44,7 @@ apt install vim -y
 apt install neofetch -y
 pkg install termux-services -y
 pkg install make -y
+pkg install golang -y
 echo
 clear
 git clone https://github.com/Towha/termux-sudo 
