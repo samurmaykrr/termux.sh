@@ -1,5 +1,6 @@
 #!//data/com.termux/files/usr/bin/bash
 current_dir=$(pwd)
+pkg install ncurses-utils && clear 
 #vars
 black=`tput setaf p`
 blue=`tput setaf 4`
