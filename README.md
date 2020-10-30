@@ -211,8 +211,8 @@ View IP address:
 ```
  sshd
 ```
- The SSH server program is not started by default, and it needs to be restarted every time the application is closed and opened.  I will explain how to start the SSH server later.
- Gathering the three elements of SSH, you can now enter ssh commands in a computer terminal or use other SSH clients to connect.  Note that Ter­mux's SSH port is 8022.
+ The SSH server program is not started by default, and it needs to be restarted every time the application is closed and opened.  I will explain how to start the SSH server later. 
+ Gathering the three elements of SSH, you can now enter ssh commands in a computer terminal or use other SSH clients to connect.  Note that Ter­mux's SSH port is 8022 also you are gonna have to have your ports opened to access it. 
 ```
  ssh User @ Host -p 8022
 ```
@@ -296,7 +296,7 @@ You can also enter `apt edit-sources` manually edited source files. Replace th
 $ cat $PREFIX/etc/apt/sources.list
 -The main termux repository:
 -deb https://dl.bintray.com/termux/termux-packages-24 stable main
-deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main
+deb https://main.termux-mirror.ml stable main
 ```
 # Last update:
 ```
