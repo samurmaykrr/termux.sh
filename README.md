@@ -277,8 +277,8 @@ mkdir -p ~/.termux && echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP
 termux-reload-settings
 ```
 # Replace domestic software source
-By default, the software package download speed is very slow. You can speed up the software package download speed by replacing the domestic software source.
-
+##### https://wiki.termux.com/wiki/Package_Management 
+By default, the software package download speed is very slow. You can speed up the software package download speed by replacing the domestic software source. check the main wiki link for more information
 To prevent modification errors, first back up the source list file:
 ```
 cp $PREFIX/etc/apt/sources.list $PREFIX/etc/apt/sources.list.bak
@@ -286,9 +286,10 @@ cp $PREFIX/etc/apt/sources.list $PREFIX/etc/apt/sources.list.bak
 reduction:cp $PREFIX/etc/apt/sources.list.bak $PREFIX/etc/apt/sources.list
 Use `sed` the command to modify a key:
 ```
-sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
+sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://main.termux-mirror.ml stable mainn@' $PREFIX/etc/apt/sources.list
 ```
-You can also enter `apt edit-sources` manually edited source files. Replace the default official source with the mirror source of Tsinghua University https://mirrors.tuna.tsinghua.edu.cn/termux.
+You can also enter `apt edit-sources` manually edited source files. Replace the default official source with the mirror source of  Xeffyr https://main.termux-mirror.ml.
++ Note: Change this main.termux-mirror.ml to the best mirror you find for you. https://github.com/termux/termux-packages/wiki/Mirrors check from here for more info.
 
 # Check modification:
 ```
